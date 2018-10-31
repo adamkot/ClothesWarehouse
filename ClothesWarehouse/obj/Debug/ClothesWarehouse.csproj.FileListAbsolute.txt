@@ -1,0 +1,12 @@
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\bin\Debug\ClothesWarehouse.exe.config
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\bin\Debug\ClothesWarehouse.exe
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\bin\Debug\ClothesWarehouse.pdb
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.csprojAssemblyReference.cache
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.MainWindow.resources
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.Properties.Resources.resources
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.csproj.GenerateResource.cache
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.csproj.CoreCompileInputs.cache
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.exe
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.pdb
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.AddForm.resources
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.EditForm.resources
