@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEmployer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employer>
+    <Name>sda</Name>
+    <Surname>asda</Surname>
+    <Position>test1</Position>
+    <Equipment>test1</Equipment>
+    <ExpDate>2018-11-02T12:23:43.8941446+01:00</ExpDate>
+  </Employer>
+</ArrayOfEmployer>

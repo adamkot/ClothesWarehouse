@@ -10,3 +10,4 @@ C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.ex
 C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.pdb
 C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.AddForm.resources
 C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.EditForm.resources
+C:\Users\Adam\CW\ClothesWarehouse\ClothesWarehouse\obj\Debug\ClothesWarehouse.EditPositionAndEquipmentForm.resources

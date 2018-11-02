@@ -46,34 +46,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddForm.cs">
+    <Compile Include="View\AddForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddForm.Designer.cs">
+    <Compile Include="View\AddForm.Designer.cs">
       <DependentUpon>AddForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditForm.cs">
+    <Compile Include="View\EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditForm.Designer.cs">
+    <Compile Include="View\EditForm.Designer.cs">
       <DependentUpon>EditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Employer.cs" />
-    <Compile Include="MainWindow.cs">
+    <Compile Include="View\EditPositionAndEquipmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="View\EditPositionAndEquipmentForm.Designer.cs">
+      <DependentUpon>EditPositionAndEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Employer.cs" />
+    <Compile Include="DAO\EmployerXML.cs" />
+    <Compile Include="View\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Position.cs" />
+    <Compile Include="DAO\PositionXML.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddForm.resx">
+    <EmbeddedResource Include="View\AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditForm.resx">
+    <EmbeddedResource Include="View\EditForm.resx">
       <DependentUpon>EditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="View\EditPositionAndEquipmentForm.resx">
+      <DependentUpon>EditPositionAndEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -98,5 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
