@@ -103,8 +103,11 @@ namespace ClothesWarehouse
 
         private void positionListToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditPositionAndEquipmentForm editPaeForm = new EditPositionAndEquipmentForm();
-            editPaeForm.Show();
+            EditPositionAndEquipmentForm editForm = new EditPositionAndEquipmentForm();
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+                
+            }
         }
 
         private void equipmentListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -190,25 +193,8 @@ namespace ClothesWarehouse
 
         private void saveListInDB()
         {
-            Position p = new Position();
-            p.EmployerPosition = "Portier";
-            string[] eq = {"kurtka", "czapka", "buty"};
-            p.Equipment = eq;
-            int[] ex = {12, 24, 36};
-            p.Expiry = ex;
 
-            Position p1 = new Position();
-            p1.EmployerPosition = "Kurier";
-            string[] eq1 = { "kurtka", "czapka", "buty" };
-            p1.Equipment = eq1;
-            int[] ex1 = { 1, 2, 3 };
-            p1.Expiry = ex1;
-
-            PositionXML pXml = new PositionXML();
-            List<Position> pList = new List<Position>();
-            pList.Add(p);
-            pList.Add(p1);
-            pXml.SaveDataToXml(pList);
+            
             //send data to database
 
             eXml.SaveDataToXml(empList);

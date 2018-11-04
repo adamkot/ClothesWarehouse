@@ -24,7 +24,7 @@ namespace ClothesWarehouse
                 tableName.Columns.Add(equColumn);
                 tableName.Columns.Add(expColumn);
                 DataRow row;
-                for (int i = 0; i < position[k].Equipment.Length; i++)
+                for (int i = 0; i < position[k].Equipment.Count; i++)
                 {
                     row = tableName.NewRow();
                     row[equColumn] = position[k].Equipment[i];

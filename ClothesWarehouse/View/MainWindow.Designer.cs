@@ -80,6 +80,7 @@
             // 
             // mainMenu
             // 
+            this.mainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -87,7 +88,8 @@
             this.helpToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(889, 24);
+            this.mainMenu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.mainMenu.Size = new System.Drawing.Size(1185, 28);
             this.mainMenu.TabIndex = 0;
             this.mainMenu.Text = "menuStrip1";
             // 
@@ -98,27 +100,27 @@
             this.saveToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
             this.fileToolStripMenuItem.Text = "Plik";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.loadToolStripMenuItem.Text = "Wczytaj z bazy danych";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.saveToolStripMenuItem.Text = "Zapisz do bazy danych";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(235, 26);
             this.exitToolStripMenuItem.Text = "Zakończ";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -131,39 +133,39 @@
             this.toolStripSeparator1,
             this.positionListToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.editToolStripMenuItem.Text = "Edycja";
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.addToolStripMenuItem.Text = "Dodaj wpis";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editDataToolStripMenuItem
             // 
             this.editDataToolStripMenuItem.Name = "editDataToolStripMenuItem";
-            this.editDataToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.editDataToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.editDataToolStripMenuItem.Text = "Edytuj wpis";
             this.editDataToolStripMenuItem.Click += new System.EventHandler(this.editDataToolStripMenuItem_Click);
             // 
             // delToolStripMenuItem
             // 
             this.delToolStripMenuItem.Name = "delToolStripMenuItem";
-            this.delToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.delToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.delToolStripMenuItem.Text = "Kasuj wpis";
             this.delToolStripMenuItem.Click += new System.EventHandler(this.delToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(150, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(179, 6);
             // 
             // positionListToolStripMenuItem
             // 
             this.positionListToolStripMenuItem.Name = "positionListToolStripMenuItem";
-            this.positionListToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.positionListToolStripMenuItem.Size = new System.Drawing.Size(182, 26);
             this.positionListToolStripMenuItem.Text = "Lista stanowisk";
             this.positionListToolStripMenuItem.Click += new System.EventHandler(this.positionListToolStripMenuItem_Click);
             // 
@@ -174,27 +176,27 @@
             this.viewInToolStripMenuItem,
             this.viewLastWymianyToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.viewToolStripMenuItem.Text = "Widok";
             // 
             // viewOutToolStripMenuItem
             // 
             this.viewOutToolStripMenuItem.Name = "viewOutToolStripMenuItem";
-            this.viewOutToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.viewOutToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.viewOutToolStripMenuItem.Text = "Pokaż tylko po terminie";
             this.viewOutToolStripMenuItem.Click += new System.EventHandler(this.viewOutToolStripMenuItem_Click);
             // 
             // viewInToolStripMenuItem
             // 
             this.viewInToolStripMenuItem.Name = "viewInToolStripMenuItem";
-            this.viewInToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.viewInToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.viewInToolStripMenuItem.Text = "Pokaż tylko w terminie";
             this.viewInToolStripMenuItem.Click += new System.EventHandler(this.viewInToolStripMenuItem_Click);
             // 
             // viewLastWymianyToolStripMenuItem
             // 
             this.viewLastWymianyToolStripMenuItem.Name = "viewLastWymianyToolStripMenuItem";
-            this.viewLastWymianyToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.viewLastWymianyToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.viewLastWymianyToolStripMenuItem.Text = "Pokaż ostatnie wymiany";
             this.viewLastWymianyToolStripMenuItem.Click += new System.EventHandler(this.viewLastWymianyToolStripMenuItem_Click);
             // 
@@ -203,44 +205,47 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homePageToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // homePageToolStripMenuItem
             // 
             this.homePageToolStripMenuItem.Name = "homePageToolStripMenuItem";
-            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.homePageToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.homePageToolStripMenuItem.Text = "Strona projektu";
             this.homePageToolStripMenuItem.Click += new System.EventHandler(this.homePageToolStripMenuItem_Click);
             // 
             // statusStrip
             // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusProgressBar,
             this.statusText});
-            this.statusStrip.Location = new System.Drawing.Point(0, 494);
+            this.statusStrip.Location = new System.Drawing.Point(0, 609);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(889, 22);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1185, 26);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             // 
             // statusProgressBar
             // 
             this.statusProgressBar.Name = "statusProgressBar";
-            this.statusProgressBar.Size = new System.Drawing.Size(200, 16);
+            this.statusProgressBar.Size = new System.Drawing.Size(267, 20);
             // 
             // statusText
             // 
             this.statusText.Name = "statusText";
-            this.statusText.Size = new System.Drawing.Size(46, 17);
+            this.statusText.Size = new System.Drawing.Size(54, 21);
             this.statusText.Text = "___...___";
             // 
             // searchButton
             // 
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(168, 3);
+            this.searchButton.Location = new System.Drawing.Point(223, 4);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(82, 36);
+            this.searchButton.Size = new System.Drawing.Size(109, 44);
             this.searchButton.TabIndex = 1;
             this.searchButton.Text = "Szukaj";
             this.searchButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -251,17 +256,19 @@
             // 
             this.searchTextBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.searchTextBox.Location = new System.Drawing.Point(3, 3);
+            this.searchTextBox.Location = new System.Drawing.Point(4, 4);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(159, 29);
+            this.searchTextBox.Size = new System.Drawing.Size(211, 34);
             this.searchTextBox.TabIndex = 0;
             // 
             // delButton
             // 
             this.delButton.Image = ((System.Drawing.Image)(resources.GetObject("delButton.Image")));
-            this.delButton.Location = new System.Drawing.Point(227, 3);
+            this.delButton.Location = new System.Drawing.Point(303, 4);
+            this.delButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.delButton.Name = "delButton";
-            this.delButton.Size = new System.Drawing.Size(110, 36);
+            this.delButton.Size = new System.Drawing.Size(147, 44);
             this.delButton.TabIndex = 2;
             this.delButton.Text = "Kasuj rekord";
             this.delButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -271,9 +278,10 @@
             // editButton
             // 
             this.editButton.Image = ((System.Drawing.Image)(resources.GetObject("editButton.Image")));
-            this.editButton.Location = new System.Drawing.Point(111, 3);
+            this.editButton.Location = new System.Drawing.Point(148, 4);
+            this.editButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(110, 36);
+            this.editButton.Size = new System.Drawing.Size(147, 44);
             this.editButton.TabIndex = 1;
             this.editButton.Text = "Edytuj wpis";
             this.editButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -284,9 +292,10 @@
             // 
             this.addButton.Image = ((System.Drawing.Image)(resources.GetObject("addButton.Image")));
             this.addButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addButton.Location = new System.Drawing.Point(3, 3);
+            this.addButton.Location = new System.Drawing.Point(4, 4);
+            this.addButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(102, 36);
+            this.addButton.Size = new System.Drawing.Size(136, 44);
             this.addButton.TabIndex = 0;
             this.addButton.Text = "Dodaj nowy";
             this.addButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -300,40 +309,44 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.mainTable, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(889, 470);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1185, 581);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.83673F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.53061F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 13F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.63265F));
             this.tableLayoutPanel2.Controls.Add(this.optionGroupBox, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dataBaseGroupBox, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.searchGroupBox, 4, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(883, 64);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1177, 78);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // optionGroupBox
             // 
             this.optionGroupBox.Controls.Add(this.flowLayoutPanel2);
             this.optionGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.optionGroupBox.Location = new System.Drawing.Point(3, 3);
+            this.optionGroupBox.Location = new System.Drawing.Point(4, 4);
+            this.optionGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.optionGroupBox.Name = "optionGroupBox";
-            this.optionGroupBox.Size = new System.Drawing.Size(355, 58);
+            this.optionGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.optionGroupBox.Size = new System.Drawing.Size(473, 70);
             this.optionGroupBox.TabIndex = 0;
             this.optionGroupBox.TabStop = false;
             this.optionGroupBox.Text = "Menu główne";
@@ -344,18 +357,21 @@
             this.flowLayoutPanel2.Controls.Add(this.editButton);
             this.flowLayoutPanel2.Controls.Add(this.delButton);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 16);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 19);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(349, 39);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(465, 47);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // dataBaseGroupBox
             // 
             this.dataBaseGroupBox.Controls.Add(this.flowLayoutPanel1);
             this.dataBaseGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataBaseGroupBox.Location = new System.Drawing.Point(374, 3);
+            this.dataBaseGroupBox.Location = new System.Drawing.Point(498, 4);
+            this.dataBaseGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataBaseGroupBox.Name = "dataBaseGroupBox";
-            this.dataBaseGroupBox.Size = new System.Drawing.Size(222, 58);
+            this.dataBaseGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataBaseGroupBox.Size = new System.Drawing.Size(297, 70);
             this.dataBaseGroupBox.TabIndex = 1;
             this.dataBaseGroupBox.TabStop = false;
             this.dataBaseGroupBox.Text = "Menu bazy danych";
@@ -365,17 +381,19 @@
             this.flowLayoutPanel1.Controls.Add(this.loadButton);
             this.flowLayoutPanel1.Controls.Add(this.saveButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 19);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(216, 39);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(289, 47);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // loadButton
             // 
             this.loadButton.Image = ((System.Drawing.Image)(resources.GetObject("loadButton.Image")));
-            this.loadButton.Location = new System.Drawing.Point(3, 3);
+            this.loadButton.Location = new System.Drawing.Point(4, 4);
+            this.loadButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.loadButton.Name = "loadButton";
-            this.loadButton.Size = new System.Drawing.Size(102, 36);
+            this.loadButton.Size = new System.Drawing.Size(136, 44);
             this.loadButton.TabIndex = 1;
             this.loadButton.Text = "Wczytaj";
             this.loadButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -385,9 +403,10 @@
             // saveButton
             // 
             this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
-            this.saveButton.Location = new System.Drawing.Point(111, 3);
+            this.saveButton.Location = new System.Drawing.Point(148, 4);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(102, 36);
+            this.saveButton.Size = new System.Drawing.Size(136, 44);
             this.saveButton.TabIndex = 2;
             this.saveButton.Text = "Zapisz";
             this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -398,9 +417,11 @@
             // 
             this.searchGroupBox.Controls.Add(this.flowLayoutPanel3);
             this.searchGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchGroupBox.Location = new System.Drawing.Point(612, 3);
+            this.searchGroupBox.Location = new System.Drawing.Point(816, 4);
+            this.searchGroupBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.searchGroupBox.Name = "searchGroupBox";
-            this.searchGroupBox.Size = new System.Drawing.Size(268, 58);
+            this.searchGroupBox.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.searchGroupBox.Size = new System.Drawing.Size(357, 70);
             this.searchGroupBox.TabIndex = 2;
             this.searchGroupBox.TabStop = false;
             this.searchGroupBox.Text = "Wyszukaj";
@@ -410,9 +431,10 @@
             this.flowLayoutPanel3.Controls.Add(this.searchTextBox);
             this.flowLayoutPanel3.Controls.Add(this.searchButton);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 16);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 19);
+            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(262, 39);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(349, 47);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // mainTable
@@ -420,22 +442,24 @@
             this.mainTable.AllowUserToDeleteRows = false;
             this.mainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mainTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTable.Location = new System.Drawing.Point(3, 73);
+            this.mainTable.Location = new System.Drawing.Point(4, 90);
+            this.mainTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainTable.Name = "mainTable";
             this.mainTable.ReadOnly = true;
-            this.mainTable.Size = new System.Drawing.Size(883, 394);
+            this.mainTable.Size = new System.Drawing.Size(1177, 487);
             this.mainTable.TabIndex = 4;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 516);
+            this.ClientSize = new System.Drawing.Size(1185, 635);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.mainMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainWindow";
             this.Text = "Clothes Warehouse";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
