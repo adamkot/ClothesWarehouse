@@ -23,13 +23,21 @@ namespace ClothesWarehouse
         public EditPositionAndEquipmentForm()
         {
             InitializeComponent();
+            CancelButton.CausesValidation = false; //bez validacji jeśli anulujemy
             //wczytuje dane do position list
             try
             {
                 pList = pXml.ReadDataFromXml();
-                for (int i = 0; i < pList.Count; i++)
+                if (pList != null)
                 {
-                    pListPosition.Add(pList[i].EmployerPosition);
+                    for (int i = 0; i < pList.Count; i++)
+                    {
+                        pListPosition.Add(pList[i].EmployerPosition);
+                    }
+                }
+                else {
+                    MessageBox.Show("Plik nie istnieje");
+                    pList = new List<Position>();
                 }
             }
             catch
@@ -37,10 +45,8 @@ namespace ClothesWarehouse
                 MessageBox.Show("Nieudane wczytywanie z pamięci");
             }
             //ustwiam dataSource dla listBox
-            var bindingListPosition = new BindingList<String>(pListPosition) { };
-            positionSource = new BindingSource(bindingListPosition, null);
-            ListPositionListBox.DataSource = positionSource;
-            setEquipmentListBox(pListEquipment);
+            setDataSourcePositionListBox(pListPosition);
+            setDataSourceEquipmentListBox(pListEquipment);
             //ustawiam datasource dla combobox
             ArrayList item = new ArrayList();
             for(int i = 0; i <= 60; i = i + 6)
@@ -76,33 +82,87 @@ namespace ClothesWarehouse
         private void EquipmentAddButton_Click(object sender, EventArgs e)
         {
             Position p = pList[ListPositionListBox.SelectedIndex];
-            equipmentSource.Add(EquipmentAddTextBox.Text);
+            p.Equipment.Add(new string[] { EquipmentAddTextBox.Text, "0"});
+            setNewEquipmentList(ListPositionListBox.SelectedIndex);
             EquipmentAddTextBox.Text = "";
-            DataExpComboBox.SelectedIndex = 0;
         }
 
         private void DataExpComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ListPositionListBox.SelectedIndex > 0)
-            {
-                Position p = pList[ListPositionListBox.SelectedIndex];
-                //zapisuje wynik na pozycji = pozycji equipment
-                p.Expiry[ListEquipmentListBox.SelectedIndex] = Convert.ToInt32(DataExpComboBox.SelectedValue);
-            }
+            //setDataExpComboBox();
         }
 
         private void ListPositionListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Position p = pList[ListPositionListBox.SelectedIndex];
-            pListEquipment = p.Equipment;
-            setEquipmentListBox(pListEquipment);
+            setNewEquipmentList(ListPositionListBox.SelectedIndex);
         }
 
-        private void setEquipmentListBox(List<String> eqList)
+        private void ListEquipmentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDataExpComboBox();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            saveDataExpComboBox();
+        }
+
+        private void setNewEquipmentList(int selectedIndex) {
+            Position p = pList[selectedIndex];
+            List<string> tmpList = new List<string>();
+            try
+            {
+                for (int i = 0; i < p.Equipment.Count; i++)
+                {
+                    tmpList.Add(p.Equipment[i][0]);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Brak obiektów na liście");
+            }
+            pListEquipment = tmpList;
+            setDataSourceEquipmentListBox(pListEquipment);
+            setDataExpComboBox();
+        }
+
+        private void setDataSourceEquipmentListBox(List<String> eqList)
         {
             var bindingListEquipment = new BindingList<String>(eqList) { };
             equipmentSource = new BindingSource(bindingListEquipment, null);
             ListEquipmentListBox.DataSource = equipmentSource;
+        }
+
+        private void setDataSourcePositionListBox(List<String> poList)
+        {
+            var bindingListPosition = new BindingList<String>(poList) { };
+            positionSource = new BindingSource(bindingListPosition, null);
+            ListPositionListBox.DataSource = positionSource;
+        }
+
+        private void setDataExpComboBox()
+        {
+            if (ListPositionListBox.SelectedIndex != -1 && ListEquipmentListBox.SelectedIndex != -1)
+            {
+                Position p = pList[ListPositionListBox.SelectedIndex];
+                try
+                {
+                    DataExpComboBox.SelectedIndex = DataExpComboBox.FindStringExact(p.Equipment[ListEquipmentListBox.SelectedIndex][1]);
+                }
+                catch
+                {
+                    DataExpComboBox.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void saveDataExpComboBox()
+        {
+            if (ListPositionListBox.SelectedIndex != -1 && ListEquipmentListBox.SelectedIndex != -1)
+            {
+                Position p = pList[ListPositionListBox.SelectedIndex];
+                p.Equipment[ListEquipmentListBox.SelectedIndex][1] = DataExpComboBox.SelectedValue.ToString();
+            }  
         }
 
         

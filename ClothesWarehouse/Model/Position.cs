@@ -9,11 +9,9 @@ namespace ClothesWarehouse
     public class Position
     {
         private string employerPosition;
-        private List<String> equipment = new List<string>();
-        private List<int> expiry = new List<int>();
+        private List<string[]> equipment = new List<string[]>();
 
         public string EmployerPosition { get => employerPosition; set => employerPosition = value; }
-        public List<String> Equipment { get => equipment; set => equipment = value; }
-        public List<int> Expiry { get => expiry; set => expiry = value; }
+        public List<string[]> Equipment { get => equipment; set => equipment = value; }
     }
 }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPosition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Position>
+    <EmployerPosition>1</EmployerPosition>
+    <Equipment>
+      <ArrayOfString>
+        <string>s</string>
+        <string>0</string>
+      </ArrayOfString>
+      <ArrayOfString>
+        <string>d</string>
+        <string>24</string>
+      </ArrayOfString>
+    </Equipment>
+  </Position>
+  <Position>
+    <EmployerPosition>w</EmployerPosition>
+    <Equipment />
+  </Position>
+</ArrayOfPosition>

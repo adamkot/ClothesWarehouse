@@ -20,15 +20,12 @@ namespace ClothesWarehouse
             {
                 DataTable tableName = new DataTable(position[k].EmployerPosition);
                 DataColumn equColumn = new DataColumn("Equipment");
-                DataColumn expColumn = new DataColumn("Expiry");
                 tableName.Columns.Add(equColumn);
-                tableName.Columns.Add(expColumn);
                 DataRow row;
                 for (int i = 0; i < position[k].Equipment.Count; i++)
                 {
                     row = tableName.NewRow();
                     row[equColumn] = position[k].Equipment[i];
-                    row[expColumn] = position[k].Expiry[i];
                     tableName.Rows.Add(row);
                 }
             }
@@ -37,14 +34,18 @@ namespace ClothesWarehouse
         }
 
         public List<Position> ReadDataFromXml() {
-            XmlSerializer ser = new XmlSerializer(typeof(List<Position>));
-            ser.UnknownNode += new
-            XmlNodeEventHandler(serializer_UnknownNode);
-            ser.UnknownAttribute += new
-            XmlAttributeEventHandler(serializer_UnknownAttribute);
-            FileStream fs = new FileStream("Position.xml", FileMode.Open);
-            List<Position> pList = (List<Position>)ser.Deserialize(fs);
-            fs.Close();
+            List<Position> pList = null;
+            if (File.Exists("Position.xml"))
+            {
+                XmlSerializer ser = new XmlSerializer(typeof(List<Position>));
+                ser.UnknownNode += new
+                XmlNodeEventHandler(serializer_UnknownNode);
+                ser.UnknownAttribute += new
+                XmlAttributeEventHandler(serializer_UnknownAttribute);
+                FileStream fs = new FileStream("Position.xml", FileMode.Open);
+                pList = (List<Position>)ser.Deserialize(fs);
+                fs.Close();
+            }
             return pList; 
         }
 

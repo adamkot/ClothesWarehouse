@@ -160,6 +160,7 @@
             this.positionListBox.Name = "positionListBox";
             this.positionListBox.Size = new System.Drawing.Size(199, 68);
             this.positionListBox.TabIndex = 10;
+            this.positionListBox.SelectedIndexChanged += new System.EventHandler(this.positionListBox_SelectedIndexChanged);
             // 
             // addPositionButton
             // 
@@ -227,6 +228,7 @@
             this.equipmentListBox.Name = "equipmentListBox";
             this.equipmentListBox.Size = new System.Drawing.Size(199, 68);
             this.equipmentListBox.TabIndex = 9;
+            this.equipmentListBox.SelectedIndexChanged += new System.EventHandler(this.equipmentListBox_SelectedIndexChanged);
             // 
             // addEquipmentButton
             // 

@@ -14,14 +14,73 @@ namespace ClothesWarehouse
     {
         private Employer emp;
         internal Employer Emp { get => emp; set => emp = value; }
+        private BindingSource positionSource;
+        private BindingSource equipmentSource;
+        PositionXML pXml = new PositionXML();
+        List<Position> pList = new List<Position>();
+        List<String> pListPosition = new List<string>();
+        List<String> pListEquipment = new List<string>();
 
         public AddForm()
         {
             InitializeComponent();
             cancelButton.CausesValidation = false; //bez validacji jeśli anulujemy
-            List<String> list = new List<string> {"test1", "test2", "test3" };
-            equipmentListBox.DataSource = list;
-            positionListBox.DataSource = list;
+            loadData();
+        }
+
+        private void loadData()
+        {
+            try
+            {
+                pList = pXml.ReadDataFromXml();
+                if (pList != null)
+                {
+                    for (int i = 0; i < pList.Count; i++)
+                    {
+                        pListPosition.Add(pList[i].EmployerPosition);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Plik nie istnieje");
+                    pList = new List<Position>();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Nieudane wczytywanie z pamięci");
+            }
+
+            var bindingListPosition = new BindingList<String>(pListPosition) { };
+            positionSource = new BindingSource(bindingListPosition, null);
+            positionListBox.DataSource = positionSource;
+            setDataTime();
+        }
+
+        private void setNewEquipmentList(int selectedIndex)
+        {
+            Position p = pList[selectedIndex];
+            List<string> tmpList = new List<string>();
+            try
+            {
+                for (int i = 0; i < p.Equipment.Count; i++)
+                {
+                    tmpList.Add(p.Equipment[i][0]);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Brak obiektów na liście");
+            }
+            pListEquipment = tmpList;
+            setDataSourceEquipmentListBox(pListEquipment);
+        }
+
+        private void setDataSourceEquipmentListBox(List<String> eqList)
+        {
+            var bindingListEquipment = new BindingList<String>(eqList) { };
+            equipmentSource = new BindingSource(bindingListEquipment, null);
+            equipmentListBox.DataSource = equipmentSource;
         }
 
         private void OKbutton_Click(object sender, EventArgs e)
@@ -35,6 +94,24 @@ namespace ClothesWarehouse
                 emp.Equipment = equipmentListBox.Text;
                 emp.ExpDate = dateTimePicker.Value;
                 DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void setDataTime()
+        {
+            dateTimePicker.Value = DateTime.Now.AddMonths(Convert.ToInt32(getExpData()));
+        }
+
+        private string getExpData()
+        {
+            if (positionListBox.SelectedIndex != -1 && equipmentListBox.SelectedIndex != -1)
+            {
+                Position p = pList[positionListBox.SelectedIndex];
+                return p.Equipment[equipmentListBox.SelectedIndex][1];
+            }
+            else
+            {
+                return "0";
             }
         }
 
@@ -71,6 +148,16 @@ namespace ClothesWarehouse
         {
             EditPositionAndEquipmentForm editPaeForm = new EditPositionAndEquipmentForm();
             editPaeForm.Show();
+        }
+
+        private void positionListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setNewEquipmentList(positionListBox.SelectedIndex);
+        }
+
+        private void equipmentListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            setDataTime();
         }
     }
 }

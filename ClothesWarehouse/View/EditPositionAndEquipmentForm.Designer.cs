@@ -39,6 +39,7 @@
             this.OKbutton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.saveButton = new System.Windows.Forms.Button();
             this.DataExpComboBox = new System.Windows.Forms.ComboBox();
             this.DataExpLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,6 +50,7 @@
             this.ListPositionListBox = new System.Windows.Forms.ListBox();
             this.ListPositionLabel = new System.Windows.Forms.Label();
             this.ListEquipmentLabel = new System.Windows.Forms.Label();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -66,13 +68,12 @@
             this.tableLayoutPanel3.Controls.Add(this.ListEquipmentListBox, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(314, 35);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(235, 28);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(302, 360);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(226, 293);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // ListEquipmentListBox
@@ -80,39 +81,36 @@
             this.ListEquipmentListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListEquipmentListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ListEquipmentListBox.FormattingEnabled = true;
-            this.ListEquipmentListBox.ItemHeight = 25;
-            this.ListEquipmentListBox.Location = new System.Drawing.Point(4, 4);
-            this.ListEquipmentListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ListEquipmentListBox.ItemHeight = 20;
+            this.ListEquipmentListBox.Location = new System.Drawing.Point(3, 3);
             this.ListEquipmentListBox.Name = "ListEquipmentListBox";
-            this.ListEquipmentListBox.Size = new System.Drawing.Size(294, 303);
+            this.ListEquipmentListBox.Size = new System.Drawing.Size(220, 247);
             this.ListEquipmentListBox.TabIndex = 0;
+            this.ListEquipmentListBox.SelectedIndexChanged += new System.EventHandler(this.ListEquipmentListBox_SelectedIndexChanged);
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.EquipmentAddTextBox);
             this.flowLayoutPanel2.Controls.Add(this.EquipmentAddButton);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(4, 315);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 256);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(294, 41);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(220, 34);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // EquipmentAddTextBox
             // 
             this.EquipmentAddTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.EquipmentAddTextBox.Location = new System.Drawing.Point(4, 4);
-            this.EquipmentAddTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.EquipmentAddTextBox.Location = new System.Drawing.Point(3, 3);
             this.EquipmentAddTextBox.Name = "EquipmentAddTextBox";
-            this.EquipmentAddTextBox.Size = new System.Drawing.Size(227, 30);
+            this.EquipmentAddTextBox.Size = new System.Drawing.Size(171, 26);
             this.EquipmentAddTextBox.TabIndex = 0;
             // 
             // EquipmentAddButton
             // 
-            this.EquipmentAddButton.Location = new System.Drawing.Point(239, 4);
-            this.EquipmentAddButton.Margin = new System.Windows.Forms.Padding(4);
+            this.EquipmentAddButton.Location = new System.Drawing.Point(180, 3);
             this.EquipmentAddButton.Name = "EquipmentAddButton";
-            this.EquipmentAddButton.Size = new System.Drawing.Size(40, 32);
+            this.EquipmentAddButton.Size = new System.Drawing.Size(30, 26);
             this.EquipmentAddButton.TabIndex = 1;
             this.EquipmentAddButton.Text = "+";
             this.EquipmentAddButton.UseVisualStyleBackColor = true;
@@ -125,13 +123,12 @@
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(624, 35);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(467, 28);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 123F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(147, 360);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(111, 293);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // flowLayoutPanel1
@@ -139,30 +136,27 @@
             this.flowLayoutPanel1.Controls.Add(this.OKbutton);
             this.flowLayoutPanel1.Controls.Add(this.CancelButton);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(4, 241);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 196);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(139, 115);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(105, 94);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // OKbutton
             // 
-            this.OKbutton.Location = new System.Drawing.Point(4, 4);
-            this.OKbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.OKbutton.Location = new System.Drawing.Point(3, 3);
             this.OKbutton.Name = "OKbutton";
-            this.OKbutton.Size = new System.Drawing.Size(127, 42);
+            this.OKbutton.Size = new System.Drawing.Size(95, 34);
             this.OKbutton.TabIndex = 0;
-            this.OKbutton.Text = "Zapisz";
+            this.OKbutton.Text = "OK";
             this.OKbutton.UseVisualStyleBackColor = true;
             this.OKbutton.Click += new System.EventHandler(this.OKbutton_Click);
             // 
             // CancelButton
             // 
             this.CancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.CancelButton.Location = new System.Drawing.Point(4, 54);
-            this.CancelButton.Margin = new System.Windows.Forms.Padding(4);
+            this.CancelButton.Location = new System.Drawing.Point(3, 43);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(127, 42);
+            this.CancelButton.Size = new System.Drawing.Size(95, 34);
             this.CancelButton.TabIndex = 1;
             this.CancelButton.Text = "Anuluj";
             this.CancelButton.UseVisualStyleBackColor = true;
@@ -172,28 +166,37 @@
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.saveButton, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.DataExpComboBox, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.DataExpLabel, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(139, 229);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(105, 187);
             this.tableLayoutPanel5.TabIndex = 1;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(3, 114);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(95, 34);
+            this.saveButton.TabIndex = 8;
+            this.saveButton.Text = "Zapisz";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // DataExpComboBox
             // 
             this.DataExpComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataExpComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DataExpComboBox.FormattingEnabled = true;
-            this.DataExpComboBox.Location = new System.Drawing.Point(4, 97);
-            this.DataExpComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.DataExpComboBox.Location = new System.Drawing.Point(3, 79);
             this.DataExpComboBox.Name = "DataExpComboBox";
-            this.DataExpComboBox.Size = new System.Drawing.Size(131, 33);
+            this.DataExpComboBox.Size = new System.Drawing.Size(99, 28);
             this.DataExpComboBox.TabIndex = 0;
             this.DataExpComboBox.SelectedIndexChanged += new System.EventHandler(this.DataExpComboBox_SelectedIndexChanged);
             // 
@@ -201,10 +204,9 @@
             // 
             this.DataExpLabel.AutoSize = true;
             this.DataExpLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DataExpLabel.Location = new System.Drawing.Point(4, 76);
-            this.DataExpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DataExpLabel.Location = new System.Drawing.Point(3, 63);
             this.DataExpLabel.Name = "DataExpLabel";
-            this.DataExpLabel.Size = new System.Drawing.Size(131, 17);
+            this.DataExpLabel.Size = new System.Drawing.Size(99, 13);
             this.DataExpLabel.TabIndex = 7;
             this.DataExpLabel.Text = "Czas ważności";
             // 
@@ -221,12 +223,11 @@
             this.tableLayoutPanel1.Controls.Add(this.ListEquipmentLabel, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 399);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(581, 324);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -236,13 +237,12 @@
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.ListPositionListBox, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 35);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 28);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(302, 360);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(226, 293);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // flowLayoutPanel3
@@ -250,27 +250,24 @@
             this.flowLayoutPanel3.Controls.Add(this.PositionAddTextBox);
             this.flowLayoutPanel3.Controls.Add(this.PositionAddButton);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(4, 315);
-            this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 256);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(294, 41);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(220, 34);
             this.flowLayoutPanel3.TabIndex = 1;
             // 
             // PositionAddTextBox
             // 
             this.PositionAddTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PositionAddTextBox.Location = new System.Drawing.Point(4, 4);
-            this.PositionAddTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.PositionAddTextBox.Location = new System.Drawing.Point(3, 3);
             this.PositionAddTextBox.Name = "PositionAddTextBox";
-            this.PositionAddTextBox.Size = new System.Drawing.Size(229, 30);
+            this.PositionAddTextBox.Size = new System.Drawing.Size(173, 26);
             this.PositionAddTextBox.TabIndex = 0;
             // 
             // PositionAddButton
             // 
-            this.PositionAddButton.Location = new System.Drawing.Point(241, 4);
-            this.PositionAddButton.Margin = new System.Windows.Forms.Padding(4);
+            this.PositionAddButton.Location = new System.Drawing.Point(182, 3);
             this.PositionAddButton.Name = "PositionAddButton";
-            this.PositionAddButton.Size = new System.Drawing.Size(37, 32);
+            this.PositionAddButton.Size = new System.Drawing.Size(28, 26);
             this.PositionAddButton.TabIndex = 1;
             this.PositionAddButton.Text = "+";
             this.PositionAddButton.UseVisualStyleBackColor = true;
@@ -281,11 +278,10 @@
             this.ListPositionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListPositionListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ListPositionListBox.FormattingEnabled = true;
-            this.ListPositionListBox.ItemHeight = 25;
-            this.ListPositionListBox.Location = new System.Drawing.Point(4, 4);
-            this.ListPositionListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ListPositionListBox.ItemHeight = 20;
+            this.ListPositionListBox.Location = new System.Drawing.Point(3, 3);
             this.ListPositionListBox.Name = "ListPositionListBox";
-            this.ListPositionListBox.Size = new System.Drawing.Size(294, 303);
+            this.ListPositionListBox.Size = new System.Drawing.Size(220, 247);
             this.ListPositionListBox.TabIndex = 0;
             this.ListPositionListBox.SelectedIndexChanged += new System.EventHandler(this.ListPositionListBox_SelectedIndexChanged);
             // 
@@ -293,10 +289,9 @@
             // 
             this.ListPositionLabel.AutoSize = true;
             this.ListPositionLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ListPositionLabel.Location = new System.Drawing.Point(4, 14);
-            this.ListPositionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ListPositionLabel.Location = new System.Drawing.Point(3, 12);
             this.ListPositionLabel.Name = "ListPositionLabel";
-            this.ListPositionLabel.Size = new System.Drawing.Size(302, 17);
+            this.ListPositionLabel.Size = new System.Drawing.Size(226, 13);
             this.ListPositionLabel.TabIndex = 5;
             this.ListPositionLabel.Text = "Lista stanowisk";
             // 
@@ -304,24 +299,22 @@
             // 
             this.ListEquipmentLabel.AutoSize = true;
             this.ListEquipmentLabel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ListEquipmentLabel.Location = new System.Drawing.Point(314, 14);
-            this.ListEquipmentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ListEquipmentLabel.Location = new System.Drawing.Point(235, 12);
             this.ListEquipmentLabel.Name = "ListEquipmentLabel";
-            this.ListEquipmentLabel.Size = new System.Drawing.Size(302, 17);
+            this.ListEquipmentLabel.Size = new System.Drawing.Size(226, 13);
             this.ListEquipmentLabel.TabIndex = 6;
             this.ListEquipmentLabel.Text = "Lista wyposażenia";
             // 
             // EditPositionAndEquipmentForm
             // 
             this.AcceptButton = this.OKbutton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 399);
+            this.ClientSize = new System.Drawing.Size(581, 324);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditPositionAndEquipmentForm";
             this.Text = "Edytuj";
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -362,5 +355,7 @@
         private System.Windows.Forms.Label DataExpLabel;
         private System.Windows.Forms.Label ListPositionLabel;
         private System.Windows.Forms.Label ListEquipmentLabel;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
