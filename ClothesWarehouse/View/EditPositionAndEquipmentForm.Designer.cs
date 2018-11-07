@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPositionAndEquipmentForm));
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.ListEquipmentListBox = new System.Windows.Forms.ListBox();
+            this.equipmentContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteEqToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.EquipmentAddTextBox = new System.Windows.Forms.TextBox();
             this.EquipmentAddButton = new System.Windows.Forms.Button();
@@ -48,10 +51,13 @@
             this.PositionAddTextBox = new System.Windows.Forms.TextBox();
             this.PositionAddButton = new System.Windows.Forms.Button();
             this.ListPositionListBox = new System.Windows.Forms.ListBox();
+            this.positionContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ListPositionLabel = new System.Windows.Forms.Label();
             this.ListEquipmentLabel = new System.Windows.Forms.Label();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel3.SuspendLayout();
+            this.equipmentContextMenuStrip.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -59,6 +65,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
+            this.positionContextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel3
@@ -78,6 +85,7 @@
             // 
             // ListEquipmentListBox
             // 
+            this.ListEquipmentListBox.ContextMenuStrip = this.equipmentContextMenuStrip;
             this.ListEquipmentListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListEquipmentListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ListEquipmentListBox.FormattingEnabled = true;
@@ -87,6 +95,20 @@
             this.ListEquipmentListBox.Size = new System.Drawing.Size(220, 247);
             this.ListEquipmentListBox.TabIndex = 0;
             this.ListEquipmentListBox.SelectedIndexChanged += new System.EventHandler(this.ListEquipmentListBox_SelectedIndexChanged);
+            // 
+            // equipmentContextMenuStrip
+            // 
+            this.equipmentContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteEqToolStripMenuItem});
+            this.equipmentContextMenuStrip.Name = "equipmentContextMenuStrip";
+            this.equipmentContextMenuStrip.Size = new System.Drawing.Size(102, 26);
+            // 
+            // deleteEqToolStripMenuItem
+            // 
+            this.deleteEqToolStripMenuItem.Name = "deleteEqToolStripMenuItem";
+            this.deleteEqToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.deleteEqToolStripMenuItem.Text = "Usuń";
+            this.deleteEqToolStripMenuItem.Click += new System.EventHandler(this.deleteEqToolStripMenuItem_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -192,13 +214,13 @@
             // DataExpComboBox
             // 
             this.DataExpComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DataExpComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.DataExpComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DataExpComboBox.FormattingEnabled = true;
             this.DataExpComboBox.Location = new System.Drawing.Point(3, 79);
             this.DataExpComboBox.Name = "DataExpComboBox";
             this.DataExpComboBox.Size = new System.Drawing.Size(99, 28);
             this.DataExpComboBox.TabIndex = 0;
-            this.DataExpComboBox.SelectedIndexChanged += new System.EventHandler(this.DataExpComboBox_SelectedIndexChanged);
             // 
             // DataExpLabel
             // 
@@ -275,6 +297,7 @@
             // 
             // ListPositionListBox
             // 
+            this.ListPositionListBox.ContextMenuStrip = this.positionContextMenuStrip;
             this.ListPositionListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListPositionListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ListPositionListBox.FormattingEnabled = true;
@@ -284,6 +307,20 @@
             this.ListPositionListBox.Size = new System.Drawing.Size(220, 247);
             this.ListPositionListBox.TabIndex = 0;
             this.ListPositionListBox.SelectedIndexChanged += new System.EventHandler(this.ListPositionListBox_SelectedIndexChanged);
+            // 
+            // positionContextMenuStrip
+            // 
+            this.positionContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.positionContextMenuStrip.Name = "contextMenuStrip";
+            this.positionContextMenuStrip.Size = new System.Drawing.Size(102, 26);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(101, 22);
+            this.deleteToolStripMenuItem.Text = "Usuń";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // ListPositionLabel
             // 
@@ -317,7 +354,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditPositionAndEquipmentForm";
             this.Text = "Edytuj";
+            this.Load += new System.EventHandler(this.EditPositionAndEquipmentForm_Load);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.equipmentContextMenuStrip.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -329,6 +368,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.positionContextMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -343,7 +383,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button OKbutton;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
@@ -357,5 +397,9 @@
         private System.Windows.Forms.Label ListEquipmentLabel;
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ContextMenuStrip positionContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip equipmentContextMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem deleteEqToolStripMenuItem;
     }
 }

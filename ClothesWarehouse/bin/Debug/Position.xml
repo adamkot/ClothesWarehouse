@@ -4,10 +4,6 @@
     <EmployerPosition>1</EmployerPosition>
     <Equipment>
       <ArrayOfString>
-        <string>s</string>
-        <string>0</string>
-      </ArrayOfString>
-      <ArrayOfString>
         <string>d</string>
         <string>24</string>
       </ArrayOfString>
@@ -15,6 +11,37 @@
   </Position>
   <Position>
     <EmployerPosition>w</EmployerPosition>
-    <Equipment />
+    <Equipment>
+      <ArrayOfString>
+        <string>ttty</string>
+        <string>30</string>
+      </ArrayOfString>
+    </Equipment>
+  </Position>
+  <Position>
+    <EmployerPosition>2</EmployerPosition>
+    <Equipment>
+      <ArrayOfString>
+        <string>qwerty</string>
+        <string>24</string>
+      </ArrayOfString>
+      <ArrayOfString>
+        <string>1</string>
+        <string>6</string>
+      </ArrayOfString>
+    </Equipment>
+  </Position>
+  <Position>
+    <EmployerPosition>ss</EmployerPosition>
+    <Equipment>
+      <ArrayOfString>
+        <string>1</string>
+        <string>6</string>
+      </ArrayOfString>
+      <ArrayOfString>
+        <string>2</string>
+        <string>30</string>
+      </ArrayOfString>
+    </Equipment>
   </Position>
 </ArrayOfPosition>

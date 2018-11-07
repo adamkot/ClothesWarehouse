@@ -12,6 +12,11 @@ namespace ClothesWarehouse
 {
     class EmployerXML
     {
+
+        /*
+         * Pobiera listę obiektów Employer
+         * i zapisuje je do pliku "Employer.xml" w głównym katalogu programu
+         */
         public void SaveDataToXml(List<Employer> employer)
         {
             XmlSerializer ser = new XmlSerializer(typeof(List<Employer>));
@@ -42,6 +47,10 @@ namespace ClothesWarehouse
             writer.Close();
         }
 
+        /*
+         * Wczytuje z pliku "Employer.xml" z głównego katalogu programu
+         * Zwraca listę obiektów Employer
+         */
         public List<Employer> ReadDataFromXml()
         {
             XmlSerializer ser = new XmlSerializer(typeof(List<Employer>));

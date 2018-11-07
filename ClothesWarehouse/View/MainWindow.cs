@@ -22,11 +22,18 @@ namespace ClothesWarehouse
 
             empList = new List<Employer>();
             eXml = new EmployerXML();
-            empList = eXml.ReadDataFromXml(); // uwaga na błędy!!!
+            try
+            {
+                empList = eXml.ReadDataFromXml();
+            }
+            catch
+            {
+                MessageBox.Show("Błąd: nie wczytano danych z pamięci", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             var bindingList = new BindingList<Employer>(empList) { };
             source = new BindingSource(bindingList, null);
             mainTable.DataSource = source;
-
+            //opis tabeli
             mainTable.Columns[0].HeaderText = "Imię";
             mainTable.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             mainTable.Columns[1].HeaderText = "Nazwisko";
@@ -37,6 +44,11 @@ namespace ClothesWarehouse
             mainTable.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             mainTable.Columns[4].HeaderText = "Data ważności";
             mainTable.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            expireDateListener();
         }
 
         #region menu
@@ -64,11 +76,6 @@ namespace ClothesWarehouse
         private void saveButton_Click(object sender, EventArgs e)
         {
             saveListInDB();
-        }
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            search();
         }
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,33 +117,45 @@ namespace ClothesWarehouse
             }
         }
 
-        private void equipmentListToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //equipment list form
-        }
-
         private void viewOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //view1
+            viewExp();
         }
 
         private void viewInToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //view2
+            viewInData();
         }
 
         private void viewLastWymianyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //view3
+            viewAll();
         }
 
         private void homePageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //show home page
+            System.Diagnostics.Process.Start("https://github.com/adamkot/ClothesWarehouse");
+        }
+
+        private void searchTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (searchTextBox.Text.Length > 2)
+            {
+                search();
+            }
+            else
+            {
+                viewAll();
+            }
+
         }
 
         #endregion
 
+        /*
+         * Otwiera okno AddForm.
+         * Jesli okno wypełniono poprawnie dodaje rekord do listy
+         */
         private void addRecord()
         {
             AddForm addForm = new AddForm();
@@ -146,6 +165,10 @@ namespace ClothesWarehouse
             }
         }
 
+        /*
+         * Otwiera okno EditForm
+         * Jeśli zostało wypełnione poprawnie to zamienia rekord
+         */
         private void editRecord()
         {
 
@@ -162,11 +185,14 @@ namespace ClothesWarehouse
             }
             else
             {
-                MessageBox.Show("Błąd: nie zaznaczono pola)");
+                MessageBox.Show("Błąd: nie zaznaczono pola");
             }
             
         }
 
+        /*
+         * Usuwa zaznaczony rekord
+         */
         private void deleteRecord()
         {
             if (mainTable.CurrentCell != null)
@@ -181,30 +207,108 @@ namespace ClothesWarehouse
             }
             else
             {
-                MessageBox.Show("Błąd: nie zaznaczono pola)");
+                MessageBox.Show("Błąd: nie zaznaczono pola", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        /*
+         * Wczytuje dane z pliku przez klase EmployerXml
+         */
         private void loadListFromDB()
         {
             empList = eXml.ReadDataFromXml();
-            //load data from database
         }
 
+        /*
+         * Zapisuje dane do pliku przez klase EmployerXml
+         */
         private void saveListInDB()
         {
-
-            
-            //send data to database
-
             eXml.SaveDataToXml(empList);
         }
 
-        private void search()
+        /*
+         * Generuje listę rekordów z datami po terminie
+         */
+        private void viewExp()
         {
-            //search
+            List<Employer> viewList = new List<Employer>();
+            for (int i = 0; i < empList.Count; i++)
+            {
+                if (DateTime.Compare(empList[i].ExpDate, DateTime.Now) < 0)
+                {
+                    viewList.Add(empList[i]);
+                }
+            }
+            var viewBindingList = new BindingList<Employer>(viewList) { };
+            BindingSource viewSource = new BindingSource(viewBindingList, null);
+            mainTable.DataSource = viewSource;
         }
 
+        /*
+         * Generuje listę rekordów z datami przed terminem
+         */
+        private void viewInData()
+        {
+            List<Employer> viewList = new List<Employer>();
+            for (int i = 0; i < empList.Count; i++)
+            {
+                if (DateTime.Compare(empList[i].ExpDate, DateTime.Now) >= 0)
+                {
+                    viewList.Add(empList[i]);
+                }
+            }
+            var viewBindingList = new BindingList<Employer>(viewList) { };
+            BindingSource viewSource = new BindingSource(viewBindingList, null);
+            mainTable.DataSource = viewSource;
+        }
+
+        /*
+         * Generuje listę wszystkich rekordów
+         */
+        private void viewAll()
+        {
+            mainTable.DataSource = source;
+            expireDateListener();
+        }
+
+        /*
+         * Generuje listę rekordów zgodną z treścią wyszukiwania
+         */
+        private void search()
+        {
+            int max = empList.Count;
+            List<Employer> searchList = new List<Employer>();
+            for (int i = 0; i < max; i++) {
+                if ((empList[i].Equipment.ToLower().Contains(searchTextBox.Text.ToLower()))
+                    || (empList[i].Name.ToLower().Contains(searchTextBox.Text.ToLower()))
+                    || (empList[i].Surname.ToLower().Contains(searchTextBox.Text.ToLower()))
+                    || (empList[i].Position.ToLower().Contains(searchTextBox.Text.ToLower()))) {
+                    searchList.Add(empList[i]);
+                }
+            }
+            var searchBindingList = new BindingList<Employer>(searchList) { };
+            BindingSource searchSource = new BindingSource(searchBindingList, null);
+            mainTable.DataSource = searchSource;
+        }
+
+        /*
+         * Sprawdza czy termin jest przekroczony
+         * jeśli tak zaznacza wiersz na czerwono
+         */
+        private void expireDateListener()
+        {
+            for (int i = 0; i < empList.Count; i++) {
+                if (DateTime.Compare(empList[i].ExpDate,DateTime.Now) < 0) {
+                    mainTable.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+
+        /*
+         * Procedura wyjścia z programu
+         * (pytanie czy chcesz wyjść)
+         */
         private void exitProcedure()
         {
             DialogResult dialogResult = MessageBox.Show("Czy chcesz zakończyć pracę?", "Zamknij", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -214,7 +318,7 @@ namespace ClothesWarehouse
             }
             else
             {
-                //else
+
             }
         }
 

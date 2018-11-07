@@ -124,19 +124,6 @@
     <value>127, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAu
-        IwAALiMBeKU/dgAAAAd0SU1FB+IKHgwfHlNh4r0AAAF6SURBVEhL7ZY/LwRRFMUnotqWwhayFV9Ao1mt
-        XlSik0h0KsUodDrZLfkG2/gGNBoKiU6l0Kho1fyunJHnzpuYN2Yo7El+hbn3nrPen53NpvJaOLhYhA3Y
-        FasqdSMChnAFbxGeYQQ9tbcjmcYCPY+worGfCaOzwLgOr7Ck8WbCwPYyZnwORzCGe/A99mxWNuli+CEw
-        M2yPByp/imf7QU/BjsppYnDdGdkBmle5JGp50Gtcq5QmBo+d0aFKUVHvgW1DODOjcn0x5A/VUKVK0XPr
-        ZtJPOEN/FuyXOlcpKurlpc4vGy117HDNqVwSNX+4blRKF8NPzizlOu2pnC6GN52ZYcs5AQs7gTvwPcay
-        bJoJg9SvzAL73i6tTpIwqPuS8PfYiG5PbTG8JhNvbLzAx2sRTvUspJX/fgBbUPwQsPf0l2vD3/4+txP+
-        nQjYDgJ/PdxWYxruw/tq60YEVIWP1NKdCImFdx9sIigM736fQxFm994+QOXPqP+gLHsH1Rk9UbWEnQ8A
-        AAAASUVORK5CYII=
-</value>
-  </data>
   <data name="delButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

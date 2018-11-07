@@ -12,6 +12,10 @@ namespace ClothesWarehouse
 {
     class PositionXML
     {
+        /*
+         * Pobiera listę obiektów Position
+         * i zapisuje je do pliku "Position.xml" w głównym katalogu programu
+         */
         public void SaveDataToXml(List<Position> position)
         {
             XmlSerializer ser = new XmlSerializer(typeof(List<Position>));
@@ -33,6 +37,10 @@ namespace ClothesWarehouse
             writer.Close();
         }
 
+        /*
+         * Wczytuje z pliku "Position.xml" z głównego katalogu programu
+         * Zwraca listę obiektów Position
+         */
         public List<Position> ReadDataFromXml() {
             List<Position> pList = null;
             if (File.Exists("Position.xml"))
